@@ -6,6 +6,8 @@ var listings = [
   {id:4, title:"Shared Room near Thamel", type:"Room", area:"Thamel", price:7000, beds:1, baths:1, lat:27.7154, lng:85.3123},
   {id:5, title:"Modern 1BHK Apartment", type:"Flat", area:"Lazimpat", price:22000, beds:1, baths:1, lat:27.7244, lng:85.3214},
   {id:6, title:"Renovated Bungalow", type:"House", area:"Patan", price:60000, beds:5, baths:4, lat:27.6727, lng:85.3247},
+  {id:7, title:"Cozy Rooftop Room", type:"Room", area:"Baluwatar", price:8500, beds:1, baths:1, lat:27.7282, lng:85.3275},
+  {id:8, title:"Spacious 3BHK near Ring Road", type:"Flat", area:"Kalanki", price:35000, beds:3, baths:2, lat:27.6939, lng:85.2802},
 ];
 
 var providers = [
@@ -26,6 +28,10 @@ var events = [
   {id:1, title:"Open House — Jhamsikhel 2BHK", date:"2026-06-24", loc:"Jhamsikhel"},
   {id:2, title:"Tenant Meetup & Chiya", date:"2026-06-28", loc:"Patan Community Hall"},
   {id:3, title:"Monsoon-Proofing Workshop", date:"2026-07-03", loc:"Online"},
+   {id:4, title:"First-Time Renter Q&A", date:"2026-07-06", loc:"Thamel Co-Work Space"},
+  {id:5, title:"Landlord-Tenant Rights Talk", date:"2026-07-12", loc:"Baneshwor Library Hall"},
+  {id:6, title:"Community Clean-Up Drive", date:"2026-07-18", loc:"Boudha Neighbourhood"},
+
 ];
 
 var areas = ["Boudha","Jhamsikhel","Baneshwor","Thamel","Lazimpat","Patan","Kalanki"];

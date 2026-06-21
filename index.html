@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GharSathi — Rent. Settle. Sorted.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="GharSathi — Kathmandu rentals, searchable by map, with home services on the side..">
+  <title>GharSathi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <link rel="stylesheet" href="style.css">
@@ -13,7 +14,7 @@
 
 <header>
   <nav class="wrap">
-    <div class="brand"> GharSathi</div>
+    <div class="brand"><img src="logo.png" alt="GharSathi Logo" style="height: 38px;"> GharSathi</div>
     <div class="navlinks">
       <button onclick="document.getElementById('browse').scrollIntoView({behavior:'smooth'})">Browse</button>
       <button onclick="document.getElementById('map').scrollIntoView({behavior:'smooth'})">Map</button>
@@ -26,7 +27,7 @@
 <section class="hero">
   <div class="wrap">
     <h1>Find home. Fix home.<br><em>Settle in, sorted.</em></h1>
-    <p>Tired of scrolling Facebook groups for rentals? Browse listings, check the map, book home services — all in one place.</p>
+    <p>Find rentals faster & smarter in Kathmandu Valley. No endless Facebook scrolling.</p>
     <div class="search-bar">
       <select id="heroArea"><option value="">Any area</option></select>
       <select id="heroType">
@@ -108,7 +109,7 @@
   </div>
 </section>
 
-<footer><div class="wrap">Made by The Glostline at NCIT Hackathon · Kathmandu · June 2026</div></footer>
+<footer><div class="wrap">Made by The Ghostline at NCIT Hackathon · Kathmandu · June 2026</div></footer>
 
 <!-- listing detail modal -->
 <div class="modal-bg" id="listingModal" onclick="if(event.target===this)closeModal('listingModal')">
