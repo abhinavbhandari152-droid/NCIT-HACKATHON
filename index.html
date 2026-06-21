@@ -20,6 +20,7 @@
       <button onclick="document.getElementById('map').scrollIntoView({behavior:'smooth'})">Map</button>
       <button onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Services</button>
       <button onclick="document.getElementById('dashboard').scrollIntoView({behavior:'smooth'})">Dashboard</button>
+      <button onclick="openAdminLogin()">Admin Login</button>
     </div>
   </nav>
 </header>
@@ -109,6 +110,91 @@
   </div>
 </section>
 
+<section id="admin" class="admin-section">
+  <div class="wrap">
+    <div class="label">ADMIN</div>
+    <h2>Admin Console</h2>
+    <p class="admin-subtitle">Add new rooms, flats, or houses with price and area details, then publish them instantly to the listings feed.</p>
+    <div class="admin-actions">
+      <button class="btn btn-primary" onclick="logoutAdmin()">Logout</button>
+      <button class="btn" onclick="updateAdminStats()">Refresh Stats</button>
+    </div>
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h3>Listings</h3>
+        <p id="adminListingsCount">0</p>
+      </div>
+      <div class="admin-card">
+        <h3>Providers</h3>
+        <p id="adminProvidersCount">0</p>
+      </div>
+      <div class="admin-card">
+        <h3>Events</h3>
+        <p id="adminEventsCount">0</p>
+      </div>
+      <div class="admin-card">
+        <h3>User Activity</h3>
+        <p id="adminActivityCount">0 saved / 0 bookings / 0 RSVPs</p>
+      </div>
+    </div>
+    <div class="admin-form">
+      <h3>Add a new listing</h3>
+      <div class="admin-form-row">
+        <label>Title</label>
+        <input id="adminListingTitle" placeholder="Sunny 2BHK near Boudha">
+      </div>
+      <div class="admin-form-row admin-form-grid">
+        <div>
+          <label>Type</label>
+          <select id="adminListingType">
+            <option value="Room">Room</option>
+            <option value="Flat">Flat</option>
+            <option value="House">House</option>
+          </select>
+        </div>
+        <div>
+          <label>Area</label>
+          <input id="adminListingArea" placeholder="Boudha">
+        </div>
+      </div>
+      <div class="admin-form-row admin-form-grid">
+        <div>
+          <label>Price</label>
+          <input type="number" id="adminListingPrice" placeholder="22000">
+        </div>
+        <div>
+          <label>Beds</label>
+          <input type="number" id="adminListingBeds" placeholder="2" min="1">
+        </div>
+        <div>
+          <label>Baths</label>
+          <input type="number" id="adminListingBaths" placeholder="1" min="1">
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="addAdminListing()">Add Listing</button>
+    </div>
+    <div class="admin-form">
+      <h3>Add an upcoming event</h3>
+      <div class="admin-form-row">
+        <label>Event Title</label>
+        <input id="adminEventTitle" placeholder="Monsoon-Proofing Workshop">
+      </div>
+      <div class="admin-form-row admin-form-grid">
+        <div>
+          <label>Date</label>
+          <input type="date" id="adminEventDate">
+        </div>
+        <div>
+          <label>Location</label>
+          <input id="adminEventLocation" placeholder="Patan Community Hall">
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="addAdminEvent()">Add Event</button>
+    </div>
+    <div id="adminDetails"></div>
+  </div>
+</section>
+
 <footer><div class="wrap">Made by The Ghostline at NCIT Hackathon · Kathmandu · June 2026</div></footer>
 
 <!-- listing detail modal -->
@@ -127,6 +213,20 @@
         <div class="form-row"><label>When</label><input type="datetime-local" id="bTime" required></div>
         <div class="form-row"><label>Issue</label><textarea id="bNotes" rows="2" placeholder="Describe the problem"></textarea></div>
         <button type="submit" class="btn btn-primary" style="width:100%;margin-top:4px">Confirm</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal-bg" id="adminLoginModal" onclick="if(event.target===this)closeModal('adminLoginModal')">
+  <div class="modal" style="max-width:380px">
+    <button class="modal-x" onclick="closeModal('adminLoginModal')">✕</button>
+    <div style="padding:20px">
+      <h3>Admin Login</h3>
+      <form id="adminLoginForm" onsubmit="adminLogin(event)" style="margin-top:12px">
+        <div class="form-row"><label>Admin ID</label><input id="adminUser" placeholder="admin" required></div>
+        <div class="form-row"><label>Password</label><input type="password" id="adminPass" placeholder="•••••••" required></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:4px">Enter</button>
       </form>
     </div>
   </div>
